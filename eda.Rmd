@@ -140,7 +140,7 @@ weather_df |>
 ```{r}
 weather_df |> 
   group_by(name) |> 
-  mutate(mean_tmax = mean(tmax, na.rm = TRUE))
+  mutate(mean_tmax = mean(tmax, na.rm = TRUE)) |> view()
 ```
 
 
