@@ -171,7 +171,7 @@ ggp_weather =
 
 ggp_weather
 
-ggsave("results/ggp_weather.pdf", ggp_weather)
+ggsave("plots/ggp_weather.pdf", ggp_weather)
 ```
 
 
