@@ -66,7 +66,11 @@ ggp_nyc_weather =
 
 ```{r}
 ggplot(weather_df, aes(x = tmin, y = tmax)) + 
-  geom_point(aes(color = name), alpha = 0.3) +
+  geom_point(aes(color = name), alpha = 0.3) + ## yields 1 line as it applies the color to the geom_point ONLY
+  geom_smooth(se = FALSE)
+
+ggplot(weather_df, aes(x = tmin, y = tmax, color = name)) + 
+  geom_point(alpha = 0.3) + ## yields 3 different lines as it applies the color to the geom_point AND geom_smooth
   geom_smooth(se = FALSE)
 ```
 
