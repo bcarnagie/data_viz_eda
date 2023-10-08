@@ -113,6 +113,7 @@ weather_df |>
   ) + 
   viridis::scale_color_viridis(discrete = TRUE) + 
   theme_minimal() + 
+  theme_friends() ## change the theme here!!
   theme(legend.position = "bottom")
 ```
 
@@ -147,7 +148,7 @@ ggplot(nyc_weather_df, aes(x = date, y = tmax, color = name)) +
 weather_df |> 
   ggplot(aes(x = date, y = tmax, color = name)) + 
   geom_point() + 
-  facet_grid(. ~ name)
+  facet_grid(. ~ name) # null facets on the rows and names facets on the columns
 ```
 
 
@@ -181,7 +182,7 @@ ggp_tmax_date =
 ```{r}
 weather_df |> 
   mutate(
-    name = fct_relevel(name, c("Molokai_HI", "CentralPark_NY", "Waterhole_WA"))
+    name = fct_relevel(name, c("Molokai_HI", "CentralPark_NY", "Waterhole_WA")) # allows you to control the level of the names
   ) |> 
   ggplot(aes(x = name, y = tmax)) + 
   geom_boxplot()
@@ -226,13 +227,3 @@ fas_df |>
 
 
 ```
-
-
-
-
-
-
-
-
-
-
